@@ -33,11 +33,3 @@ def decrypt(encrypted_message, password=password):
     except ValueError:
         return False
     return decrypted_text
-
-
-if __name__ == "__main__":
-    message = "This is your plaintext"
-    print(message)
-    encrypted_message = base64.b64encode(encrypt(key, mode, message))
-    print(encrypted_message)
-    print(decrypt(key, mode, base64.b64decode(encrypted_message)).decode())
