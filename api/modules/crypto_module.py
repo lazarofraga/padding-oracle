@@ -17,7 +17,8 @@ def generate_key(password):
 
 def encrypt(plaintext):
     cipher = AES.new(key, mode, iv)
-    encrypted_message = cipher.encrypt(pad(plaintext.encode("ascii"), block_size))
+    encrypted_message = cipher.encrypt(
+        pad(plaintext.encode("ascii"), block_size))
     encrypted_message = base64.urlsafe_b64encode(encrypted_message)
     return encrypted_message
 
